@@ -19,10 +19,14 @@ body {
   flex-direction: column;
 }
 
+header {
+  margin-bottom: 2rem;
+}
+
 h1 {
   font-size: 3rem;
   text-align: center;
-  font-weight: normal;
+  font-weight: bold;
   padding: 0.5rem 0 0 0;
 }
 
@@ -33,6 +37,23 @@ p {
 
 .instructions {
   font-size: 1.2rem;
+  margin: 0 34% 0;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.instructions h2 {
+  margin-bottom: 1.2rem;
+}
+
+.instructions ol {
+  margin: 0 0 1rem 1.4rem;
+}
+
+.instructions li {
+  margin-bottom: 0.5rem;
 }
 
 .main-controls {
@@ -90,6 +111,12 @@ button:active {
   margin-top: 1rem;
   display: block;
   font-size: 1.5rem;
+  text-align: center;
+}
+
+.source-code {
+  background: #ddd;
+  padding: .5rem 0;
 }
 
 
