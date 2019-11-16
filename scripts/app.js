@@ -33,7 +33,7 @@ if (navigator.mediaDevices.getUserMedia) {
       console.log(mediaRecorder.state);
       console.log("recorder started");
       record.style.background = "red";
-
+      document.querySelector('.visualizer').classList.add('active');
       stop.disabled = false;
       record.disabled = true;
     }

@@ -71,6 +71,16 @@ button:active {
   transform: translateY(2px);
 }
 
+.visualizer {
+  height: 0;
+  margin: 2rem auto 0;
+  transition: .3s;
+}
+
+.visualizer.active {
+  height: 60px;
+}
+
 
 /* Make the clips use as much space as possible, and
  * also show a scrollbar when there are too many clips to show
