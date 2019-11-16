@@ -19,11 +19,15 @@ body {
   flex-direction: column;
 }
 
-h1, h2 {
+h1 {
   font-size: 2rem;
   text-align: center;
   font-weight: normal;
   padding: 0.5rem 0 0 0;
+}
+
+p {
+  text-align: center;
 }
 
 .main-controls {
@@ -47,7 +51,7 @@ canvas {
   width: calc(50% - 0.25rem);
 }
 
-button {
+button, .record {
   font-size: 1rem;
   background: #0088cc;
   text-align: center;
