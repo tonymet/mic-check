@@ -20,14 +20,19 @@ body {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 3rem;
   text-align: center;
   font-weight: normal;
   padding: 0.5rem 0 0 0;
 }
 
 p {
+  font-size: 2rem;
   text-align: center;
+}
+
+.instructions {
+  font-size: 1.2rem;
 }
 
 .main-controls {
@@ -79,6 +84,12 @@ button:active {
 
 .visualizer.active {
   height: 60px;
+}
+
+.quote {
+  margin-top: 1rem;
+  display: block;
+  font-size: 1.5rem;
 }
 
 
