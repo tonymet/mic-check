@@ -130,10 +130,10 @@ button:active {
 /* Make the clips use as much space as possible, and
  * also show a scrollbar when there are too many clips to show
  * in the available space */
-.sound-clips {
-  flex: 1;
-  overflow: auto;
-}
+/*.sound-clips {*/
+  /*flex: 1;*/
+  /*overflow: auto;*/
+/*}*/
 
 section, article {
   display: block;
