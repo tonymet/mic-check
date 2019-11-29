@@ -107,6 +107,13 @@ button:active {
   height: 60px;
 }
 
+.current-microphone {
+  display: block;
+  position: relative;
+  font-size: .9rem;
+  margin-bottom: 1.5rem;
+}
+
 .quote {
   margin-top: 1rem;
   display: block;
@@ -214,5 +221,18 @@ input[type=checkbox]:checked ~ aside {
     width: 90%;
     max-width: 1000px;
     margin: 0 auto;
+  }
+}
+
+
+@media (max-width: 700px) {
+  header p {
+    font-size: 1.4rem;
+  }
+  .instructions {
+    margin: 0 2rem;
+  }
+  .wrapper {
+    padding: 1rem;
   }
 }

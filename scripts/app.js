@@ -10,9 +10,8 @@ var mainSection = document.querySelector('.main-controls');
 
 stop.disabled = true;
 
-// visualiser setup - create web audio api context and canvas
+// visualiser setup - create canvas
 
-var audioCtx = new (window.AudioContext || webkitAudioContext)();
 var canvasCtx = canvas.getContext("2d");
 
 //main block for doing the audio recording
@@ -23,12 +22,24 @@ if (navigator.mediaDevices.getUserMedia) {
   var constraints = { audio: true };
   var chunks = [];
 
+  var micName = '';
   var onSuccess = function(stream) {
     var mediaRecorder = new MediaRecorder(stream);
 
+    var audioSourceInfo = stream.getAudioTracks()[0];
+
+    micName = audioSourceInfo.label;
+    document.querySelector('.current-microphone').textContent = "Current microphone: \"" + micName + "\"";
+
     visualize(stream);
 
-    record.onclick = function() {
+    record.addEventListener("click", startRecording);
+    record.addEventListener("touchstarat", startRecording);
+
+    stop.addEventListener("click", stopRecording);
+    stop.addEventListener("touchend", stopRecording);
+
+    function startRecording() {
       mediaRecorder.start();
       console.log(mediaRecorder.state);
       console.log("recorder started");
@@ -38,7 +49,8 @@ if (navigator.mediaDevices.getUserMedia) {
       record.disabled = true;
     }
 
-    stop.onclick = function() {
+
+    function stopRecording() {
       mediaRecorder.stop();
       console.log(mediaRecorder.state);
       console.log("recorder stopped");
@@ -50,10 +62,12 @@ if (navigator.mediaDevices.getUserMedia) {
       record.disabled = false;
     }
 
+    var clipCount = 0;
     mediaRecorder.onstop = function(e) {
+      clipCount +=1;
       console.log("data available after MediaRecorder.stop() called.");
 
-      var clipName = prompt('Enter a name for your sound clip?','My unnamed clip');
+      var clipName = 'clip ' + clipCount + ' recorded using "' + micName + '"';
       console.log(clipName);
       var clipContainer = document.createElement('article');
       var clipLabel = document.createElement('p');
@@ -115,6 +129,7 @@ if (navigator.mediaDevices.getUserMedia) {
 }
 
 function visualize(stream) {
+  var audioCtx = new (window.AudioContext || webkitAudioContext)();
   var source = audioCtx.createMediaStreamSource(stream);
 
   var analyser = audioCtx.createAnalyser();
