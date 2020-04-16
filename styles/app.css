@@ -121,10 +121,6 @@ button:active {
   text-align: center;
 }
 
-.source-code {
-  background: #ddd;
-  padding: .5rem 0;
-}
 
 
 /* Make the clips use as much space as possible, and
@@ -235,4 +231,25 @@ input[type=checkbox]:checked ~ aside {
   .wrapper {
     padding: 1rem;
   }
+}
+
+
+.source-code {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #dddddd;
+  padding: .5rem 0;
+}
+
+.repo-link {
+  display: flex;
+  align-items: center;
+  color: #333333;
+}
+
+.github-logo {
+  max-width: 50px;
+  margin-right: 10px;
 }
