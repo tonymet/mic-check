@@ -239,7 +239,7 @@ input[type=checkbox]:checked ~ aside {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #dddddd;
+  background: #eeeeee;
   padding: .5rem 0;
 }
 
