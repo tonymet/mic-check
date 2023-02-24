@@ -6,17 +6,19 @@
 
 html, body {
   height: 100%;
-}
-
-body {
+  display: flex;
+  flex-direction: column;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.8rem;
+  justify-content: space-between;
 }
 
 .wrapper {
-  height: 100%;
   display: flex;
+  width: 100%;
   flex-direction: column;
+  overflow-y: scroll;
+  padding: 1em;
 }
 
 header {
@@ -212,11 +214,12 @@ input[type=checkbox]:checked ~ aside {
 /* Adjustments for wider screens */
 @media all and (min-width: 800px) {
   /* Don't take all the space as readability is lost when line length
-     goes past a certain size */
+      goes past a certain size */
   .wrapper {
     width: 90%;
     max-width: 1000px;
     margin: 0 auto;
+    overflow-y: auto;
   }
 }
 
@@ -235,12 +238,11 @@ input[type=checkbox]:checked ~ aside {
 
 
 .source-code {
-  position: absolute;
-  left: 0;
-  right: 0;
+  width: 100%;
   bottom: 0;
   background: #eeeeee;
   padding: .5rem 0;
+  flex-shrink: 0;
 }
 
 .repo-link {
